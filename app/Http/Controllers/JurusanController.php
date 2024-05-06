@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Jurusan;
 
 class JurusanController extends Controller
 {
@@ -11,7 +12,9 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        return view('jurusan.index');
+        $nomor = 1;
+        $jur = Jurusan::all();
+        return view('jurusan.index',compact('nomor','jur'));
     }
 
     /**
@@ -19,7 +22,7 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        //
+        return view('jurusan.form');
     }
 
     /**
@@ -27,7 +30,12 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jur = new Jurusan;
+        $jur->kode = $request->kode;
+        $jur->jurusan = $request->nama;
+        $jur->save();
+
+        return redirect('/jurusan/');
     }
 
     /**
@@ -43,7 +51,8 @@ class JurusanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $jur = Jurusan::find($id);
+        return view('jurusan.edit',compact('jur'));
     }
 
     /**
@@ -51,7 +60,12 @@ class JurusanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $jur = Jurusan::find($id);
+        $jur->kode = $request->kode;
+        $jur->jurusan = $request->nama;
+        $jur->save();
+
+        return redirect('/jurusan/');
     }
 
     /**
