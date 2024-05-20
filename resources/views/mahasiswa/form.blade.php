@@ -4,7 +4,7 @@
 @section('bc')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Data Jurusan</a></li>
+        <li class="breadcrumb-item"><a href="#">Data Mahasiswa</a></li>
         <li class="breadcrumb-item active">Tambah Mahasiswa</li>
     </ol>
 @endsection
@@ -27,7 +27,7 @@
             <form method="post" action="/mahasiswa/store/">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label">Nim</label>
+                    <label class="form-label">NIM</label>
                     <input type="text" class="form-control" name="nim">
                 </div>
                 <div class="mb-3">
@@ -35,54 +35,45 @@
                     <input type="text" class="form-control" name="nama">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Pilih Jurusan</label>
-                    <select name="jurusans_id" class="form-control" id="">
-                        <option value="">-Pilih Jurusan-</option>
-
-                        @foreach ($jur as $item)
-                            <option value="">{{$item->jurusans_id}}>{{$item->jurusan}}</option>
-                        @endforeach
-
-                    </select>
+                    <label class="form-label">Tempat Lahir</label>
+                    <input type="text" class="form-control" name="tempat">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tanggal Lahir</label>
+                    <input type="date" class="form-control" name="tanggal">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Alamat</label>
                     <input type="text" class="form-control" name="alamat">
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Jenis Kelamin</label>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="jk" id="exampleRadios1" value="Laki-Laki" checked>
-                      <label class="form-check-label" for="exampleRadios1">Laki-Laki</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="jk" id="exampleRadios2" value="Perempuan">
-                      <label class="form-check-label" for="exampleRadios2">Perempuan</label>
-                    </div>
-                  </div>
                 <div class="mb-3">
-                    <label class="form-label">Tempat</label>
-                    <input type="text" class="form-control" name="tempat">
+                    <label class="form-label">-Pilih Jenis Kelamin-</label>
+                    <select type="radio" class="form-select" name="jk">
+                        <option value="laki-laki">Laki-Laki</option>
+                        <option value="perempuan">Perempuan</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Tanggal</label>
-                    <input type="date" name="tanggal" class="form-control" id="tanggal">
+                    <label class="form-label">-Pilih Jurusan-</label>
+                    <select name="jurusans_id" class="form-control" id="">
+                        <option value="">-Pilih Jurusan-</option>
+                        @foreach ($jur as $item)
+                            <option value="{{ $item->id }}">{{ $item->jurusan }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Agama</label>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="agama" id="exampleRadios1" value="islam" checked>
-                      <label class="form-check-label" for="exampleRadios1">Islam</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="agama" id="exampleRadios2" value="kristen">
-                      <label class="form-check-label" for="exampleRadios2">Kristen</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="agama" id="exampleRadios2" value="hindu">
-                        <label class="form-check-label" for="exampleRadios2">Hindu</label>
-                      </div>
-                  </div>
+                <div class="mb-3">
+                    <label class="form-label">Pilih Agama</label>
+                    <select class="form-select" name="agama">
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
         </div>

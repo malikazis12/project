@@ -32,31 +32,32 @@ class MahasiswaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'nim' => 'required|unique:mahasiswas,nim',
-            'nama' => 'required',
-            'tempat' => 'required',
-            'tanggal' => 'required|date',
-            'alamat' => 'required',
-            'jk' => 'required',
-            'jurusans_id' => 'required',
-            'agama' => 'required',
-        ]);
+{
+    $request->validate([
+        'nim' => 'required|unique:mahasiswas,nim',
+        'nama' => 'required',
+        'tempat' => 'required',
+        'tanggal' => 'required',
+        'alamat' => 'required',
+        'jk' => 'required',
+        'jurusans_id' => 'required',
+        'agama' => 'required',
 
-        $mhs = new Mahasiswa;
-        $mhs->nim = $request->nim;
-        $mhs->nama = $request->nama;
-        $mhs->tempat = $request->tempat;
-        $mhs->tanggal = $request->tanggal;
-        $mhs->alamat = $request->alamat;
-        $mhs->jk = $request->jk;
-        $mhs->jurusans_id = $request->jurusans_id;
-        $mhs->agama = $request->agama;
-        $mhs->save();
+    ]);
 
-        return redirect('/mahasiswa/');
-    }
+    $mhs = new Mahasiswa;
+    $mhs->nim = $request->nim;
+    $mhs->nama = $request->nama;
+    $mhs->tempat = $request->tempat;
+    $mhs->tanggal = $request->tanggal;
+    $mhs->alamat = $request->alamat;
+    $mhs->jk = $request->jk;
+    $mhs->jurusans_id = $request->jurusans_id;
+    $mhs->agama = $request->agama;
+    $mhs->save();
+
+    return redirect('/mahasiswa/');
+}
 
 
     /**
