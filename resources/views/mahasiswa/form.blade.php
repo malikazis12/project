@@ -48,11 +48,15 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">-Pilih Jenis Kelamin-</label>
-                    <select type="radio" class="form-select" name="jk">
-                        <option value="laki-laki">Laki-Laki</option>
-                        <option value="perempuan">Perempuan</option>
-                        <option value="lainnya">Lainnya</option>
-                    </select>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="laki-laki">
+                        <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="perempuan">
+                        <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">-Pilih Jurusan-</label>
