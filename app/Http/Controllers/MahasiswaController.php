@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
     public function index()
     {
         $nomor = 1;
-        $mhs = Jurusan::all();
+        $mhs = Mahasiswa::all();
         return view('mahasiswa.index',compact('nomor','mhs'));
     }
 
@@ -33,17 +33,6 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
 {
-    $request->validate([
-        'nim' => 'required|unique:mahasiswas,nim',
-        'nama' => 'required',
-        'tempat' => 'required',
-        'tanggal' => 'required',
-        'alamat' => 'required',
-        'jk' => 'required',
-        'jurusans_id' => 'required',
-        'agama' => 'required',
-
-    ]);
 
     $mhs = new Mahasiswa;
     $mhs->nim = $request->nim;
@@ -52,7 +41,7 @@ class MahasiswaController extends Controller
     $mhs->tanggal = $request->tanggal;
     $mhs->alamat = $request->alamat;
     $mhs->jk = $request->jk;
-    $mhs->jurusans_id = $request->jurusans_id;
+    $mhs->jurusans_id = $request->jurusan;
     $mhs->agama = $request->agama;
     $mhs->save();
 

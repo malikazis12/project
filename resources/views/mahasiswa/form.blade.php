@@ -50,17 +50,17 @@
                     <label class="form-label">-Pilih Jenis Kelamin-</label>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="laki-laki">
+                        <input class="form-check-input" type="radio" name="jk" id="inlineRadio1" value="laki-laki">
                         <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="perempuan">
+                        <input class="form-check-input" type="radio" name="jk" id="inlineRadio2" value="perempuan">
                         <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                       </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">-Pilih Jurusan-</label>
-                    <select name="jurusans_id" class="form-control" id="">
+                    <select name="jurusan" class="form-control" id="">
                         <option value="">-Pilih Jurusan-</option>
                         @foreach ($jur as $item)
                             <option value="{{ $item->id }}">{{ $item->jurusan }}</option>

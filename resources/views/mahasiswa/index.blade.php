@@ -72,11 +72,6 @@
                         <th>Nim</th>
                         <th>Nama Lengkap</th>
                         <th>Jurusan</th>
-                        <th>Alamat</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tempat</th>
-                        <th>Tanggal</th>
-                        <th>Agama</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -86,12 +81,7 @@
                             <td>{{$nomor++}}</td>
                             <td>{{$item->nim}}</td>
                             <td>{{$item->nama}}</td>
-                            <td>{{$item->jurusan}}</td>
-                            <td>{{$item->alamat}}</td>
-                            <td>{{$item->jeniskelamin}}</td>
-                            <td>{{$item->tempat}}</td>
-                            <td>{{$item->tanggal}}</td>
-                            <td>{{$item->agama}}</td>
+                            <td>{{$item->jurusans->kode}} - {{$item->jurusans->jurusan}}</td>
                             <td>
                                 <a href="/mahasiswa/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
                                 <!-- Button trigger modal -->
@@ -108,11 +98,11 @@
                                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                        Yakin Ingin Menghapus Data Jurusan <b>{{$item->jurusan}}</b>?
+                                        Yakin Ingin Menghapus Data Jurusan <b>{{$item->mahasiswa}}</b>?
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                        <form action="/jurusan/{{$item->id}}" method="post">
+                                        <form action="/mahasiswa/{{$item->id}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary">Hapus</button>
