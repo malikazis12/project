@@ -24,7 +24,7 @@
         </div>
         </div>
         <div class="card-body">
-            <form method="post" action="/mahasiswa/store/">
+            <form method="post" action="/mahasiswa/store/" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">NIM</label>
@@ -77,6 +77,10 @@
                         <option value="Buddha">Buddha</option>
                         <option value="lainnya">Lainnya</option>
                     </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Foto</label>
+                    <input type="file" class="form-control" name="foto" accept="image/*">
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
