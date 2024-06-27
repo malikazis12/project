@@ -111,6 +111,27 @@
                                                             <td>Tempat</td>
                                                             <th scope="row">{{$item->tempat}}</th>
                                                         </tr>
+                                                        <tr>
+                                                            <td>Tanggal</td>
+                                                            <th scope="row">{{$item->tanggal}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alamat</td>
+                                                            <th scope="row">{{$item->alamat}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jenis Kelamin</td>
+                                                            <th scope="row">{{$item->jk}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Agama</td>
+                                                            <th scope="row">{{$item->agama}}</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Foto</td>
+                                                            <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
+                                                        </tr>
+
 
                                                 </tbody>
                                             </table>
