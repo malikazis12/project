@@ -43,6 +43,7 @@ class MahasiswaController extends Controller
     $mhs->jk = $request->jk;
     $mhs->jurusans_id = $request->jurusan;
     $mhs->agama = $request->agama;
+    $mhs->password = bcrypt($request->password);
     $mhs->foto = $request->foto->getClientOriginalName();
     $mhs->save();
 

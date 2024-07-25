@@ -13,8 +13,11 @@ class CekAkses
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ...$akses): Response
     {
-        return $next($request);
+        if(in_array($request->user()->akses,$akses)){
+            return $next($request);
+        }
+
     }
 }
