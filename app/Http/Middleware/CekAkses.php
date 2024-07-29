@@ -19,5 +19,6 @@ class CekAkses
             return $next($request);
         }
 
+        return redirect('/');
     }
 }
