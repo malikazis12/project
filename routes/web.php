@@ -29,7 +29,7 @@ Route::get('/login-mhs', [App\Http\Controllers\MhsController::class, 'login']);
 Route::post('/login-mhs', [App\Http\Controllers\MhsController::class, 'ceklogin'])->name('login-mhs');
 
 Route::middleware('auth:mahasiswa')->group(function () {
-    Route::get('/db-mahasiswa', [App\Http\Controllers\MhsController::class, 'index']);
+Route::get('/db-mahasiswa', [App\Http\Controllers\MhsController::class, 'index']);
 });
 
 Route::middleware(['auth'])->group(function () {
